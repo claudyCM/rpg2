@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas lembranças</title>
+    <style>
+        /* Estilo do Modal */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        /* Estilo para os botões ficarem um abaixo do outro */
+        button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            width: 200px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function abrirTexto(botao) {
+            var senha = prompt("Digite a senha:");
+
+            if (botao === 1 && senha === "2004") {
+                document.getElementById("textoModal").innerText = "2004... Sim, eu me lembro, foi em 2004, o vento era frio, minha mãe me segurava com força enquanto corria, lembro do som de água, o cheiro de grama e de uma sensação fria no peito, lembro dos olhos verdes de minha mãe, do gosto salgado da chuva que vinha dela, lembro de estar escuro enquanto a lua aos poucos desaparecia, eclipse lunar? talvez, porém não completo...";
+                document.getElementById("meuModal").style.display = "block";
+            } else if (botao === 2 && senha === "Melyna") {
+                document.getElementById("textoModal").innerText = "Por que? porque esqueci meu nome? Uma vez um rapaz em meio a floresta me disse que Em grego, Melina pode significar a cortês, a gentil ou uma canção, lembro de ele ter ficado sem falar comigo por 1 semana após me dizer isso, quando retornou com seu olho machucado com um patinho em mãos sujo de barro e com um produto amarelo viscoso em seu interior, lembro do menino se corrigindo a mim dizendo que seu pai o havia corrigido Melina pode ter origem no termo grego Melitinna, que vem da palavra grega meli (mel). Por extensão, seu significado é “aquela que é doce como o mel”. Não sabia que seria a ultima vez que conversariamos.";
+                document.getElementById("meuModal").style.display = "block";
+            } else if (botao === 3 && senha === "Samira") {
+                document.getElementById("textoModal").innerText = "Já ouvi esse nome antes, sim, faz muito tempo que não ouço, quando foi a ultima vez? Foi antes de partir, Mãe... A senhora esta bem? com seus cabelos longos e bagunçados, suas roupas brancas molhadas e rasgadas, foi assim que a vi se despedir de mim, sei que cresci rapido, mas porque fui deixada ali?";
+                document.getElementById("meuModal").style.display = "block";
+            } else if (botao === 4 && senha === "Pierry") {
+                document.getElementById("textoModal").innerText = "Pierry, tinha 16 anos quando nos conhecemos , eu tinha 11 anos, sabia pouco sobre sociedade, mas sabia que aquele menino não parecia bem, com suas roupas surradas de trabalhar, sujo de folhas, calos nas mãos e pés descalços. Mesmo assim ele dividiu comigo um pedaço de sua maça, que o mesmo cortava com uma pequena faca sem serra.";
+                document.getElementById("meuModal").style.display = "block";
+            } else if (botao === 5 && senha === "Laboratorio") {
+                document.getElementById("textoModal").innerText = "Sim, mãe, a senhora tentou, não tentou? Mas eu não consegui escapar. Assim que a senhora foi pega, eu caí naquele rio. Mesmo sendo um bebê, a energia de seus olhos naquele momento seria difícil de esquecer. Por isso, mesmo tendo esquecido de tudo isso por tanto tempo, em pesadelos seus olhos ainda me assombravam. Foi quando os testes começaram. Fui um dos bebês iniciais na ideia dos cientistas. Começaram no dia do meu nascimento. Eles nos escolheram porque morávamos no interior, o que impedia que pedíssemos ajuda na cidade. Sem condições de usar um carro devido à pobreza, no final, o plano era que fôssemos nós duas. Foi ele... aquele que atacou a senhora... era ele, não era?";
+                document.getElementById("meuModal").style.display = "block";
+            } else if (botao === 6 && senha === "Pai") {
+                document.getElementById("textoModal").innerText = "Aquele que atirou era o mesmo que eu chamaria de pai, Capitão Cesar.";
+                document.getElementById("meuModal").style.display = "block";
+            } else {
+                alert("Senha incorreta!");
+            }
+        }
+
+        function fecharModal() {
+            document.getElementById("meuModal").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <h1>Bem-vindo a minha mente</h1>
+    <button onclick="abrirTexto(1)">Eu nasci?</button>
+    <button onclick="abrirTexto(2)">Meu nome?</button>
+    <button onclick="abrirTexto(3)">Minha mãe?</button>
+    <button onclick="abrirTexto(4)">O menino?</button>
+    <button onclick="abrirTexto(5)">Quando tudo mudou?</button>
+    <button onclick="abrirTexto(6)">Bang!</button>
+
+    <!-- Modal -->
+    <div id="meuModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <p id="textoModal"></p>
+        </div>
+    </div>
+</body>
+</html>
